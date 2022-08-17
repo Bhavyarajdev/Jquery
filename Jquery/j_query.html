@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>j query</title>
+<script src="jquery.min.js">
+	</script>
+	<script>
+				$(document).ready(function()
+				{
+					$("#d2").hide()
+					$("#d1").click(function(){
+						$("p").hide();
+						$("#d1").hide();
+						$("#d2").show();
+					});
+						$("#d2").click(function(){
+						$("p").show();
+						$("#d2").hide();
+						$("#d1").show();
+					});
+				});
+		
+	</script>
+</head>
+	<h1>J query</h1>
+<p >this is first program</p>
+<p >this is second program</p>
+	<button id="d1">hide</button>
+	<button id="d2">show</button>
+<body>
+</body>
+</html>

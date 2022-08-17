@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<title>sorting program</title>
+	
+	<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<style>
+	.de
+	{
+		background-color: chocolate;
+		border: solid 2px #6C07F3;
+		height: 40px;
+	}	
+	#sort1 #sort2
+	{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: 80%;
+	}
+	#sort1 li, #sort2 li
+	{
+		margin: 10px;
+		padding: 20px;
+		font-size: 15px;
+		height: 12px;
+	}
+	
+</style>	
+		<script>
+					$(document).ready(function()
+					{
+						$("#sort1").sortable();
+						$("#sort2").sortable();
+						$("#sort1").sortable({
+							connectWith: "#sort2, #sort1"
+						});
+						$("#sort2").sortable({
+							connectWith: "#sort1, #sort2"
+						});
+						
+					})
+		</script>
+</head>
+
+<body>
+	<h2>list 1</h2>
+	<ul id="sort1">
+		<li class="de">A</li>
+		<li class="de">B</li>
+		<li class="de">C</li>
+		<li class="de">D</li>
+		<li class="de">E</li>
+			</ul>
+	<h2>list 2</h2>
+	<ul id="sort2">	
+		<li class="de">a</li>
+		<li class="de">b</li>
+		<li class="de">c</li>
+		<li class="de">d</li>
+		<li class="de">e</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+	<script src="jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/eggplant/jquery-ui.css">
+
+	<script>
+			$(document).ready(function()
+			{
+				$("#date1").datepicker(
+				{
+					showWeek: true,
+					yearSuffix: "(DD/MM/YY)",
+					showAnim: "slide",
+				});
+				$("#date2").datepicker();
+			});
+	</script>
+</head>
+
+<body>
+	<label for="date1">enter your dob</label>
+	<input type="text" id="date1" >
+	<br><br>
+	<label for="date2">enter your dob</label>
+	<input type="text" id="date2" >
+	
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<title>drag drop</title>
+	 <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css" />
+      <script src = "https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+
+	<style>
+		.header{
+				background: yellow;
+			border: 1px solid yellow;
+			color: rebeccapurple;
+			font-weight: bold;
+		}
+		#class
+		{
+			width: 200px;
+			height: 250px;
+			padding: 10px;
+			margin: 10px;
+		}		
+		#student
+		{
+			background: royalblue;
+			border: 2px solid #72EB0C;
+			color: coral;
+			width: 200px;
+			height: 200px;
+			padding: 10px;
+			margin: 0px 5px 10px 0;
+		}
+		.mycls{background: red;}
+	</style>
+	<script>
+		$(document).ready(function()
+		{
+			$("#student").draggable();
+			$("#class").droppable({
+				
+				accept:"#student",
+				drop:function(event,ui){
+					$(this).addClass("mycls").find("p").text("donee.....");
+				}
+			});
+		});
+	</script>
+	
+</head>
+
+<body>
+	
+	<div id="student"><p>hii....i am student</p></div><hr>
+	<div id="class" class="header"><p>welcome to class</p></div>
+</body>
+</html>

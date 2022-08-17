@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+	<script>
+			$(document).ready(function()
+			{
+				$("#d2").attr("disabled",true);
+				$("#d1").click(function()
+				{
+					$(".div1").hide(3000);
+					
+					$(this).attr("disabled",true);
+					$("#d2").attr("disabled",false);
+					$("#d3").text("show");
+				});				
+				$("#d2").click(function()
+				{
+					$(".div1").show(3000);
+					
+					$(this).attr("disabled",true);
+					$("#d1").attr("disabled",false);
+					$("#d3").text("hide");
+				});
+			
+			$("#d3").click(function()
+		    {
+			$(".div1").toggle(2000);
+			if ($("#d3").text() == "hide") 
+				{
+					$(this).text("show");
+					$("#d1").attr("disabled",true);
+					$("#d2").attr("disabled",false);
+				}
+			else
+				{
+					$(this).text("hide");
+					$("#d2").attr("disabled",true);
+					$("#d1").attr("disabled",false);
+				}
+			});
+				let h=parseInt($(".div1").css("height"));
+				let w=parseInt($(".div1").css("width"));
+				let ih=parseInt($(".image").css("height"));
+				let iw=parseInt($(".width").css("width"));
+				$("#plus").click(function()
+				{
+					h+= 20;
+					w+= 20;
+					$(".div1").css("height",h);
+					$(".div1").css("width",w);
+					ih+= 20;
+					iw+= 20;
+					$(".image").css("height",ih);
+					$(".image").css("width",iw);
+				});
+				$("#minus").click(function()
+				{
+					h-= 20;
+					w-= 20;
+					$(".div1").css("height",h);
+					$(".div1").css("width",w);
+					ih-= 20;
+					iw-= 20;
+					$(".image").css("height",ih);
+					$(".image").css("width",iw);
+				});
+				
+		});
+	</script>
+</head>
+
+<body>
+	<div class="div1" style="height: 300px; width: 300px; background-color:rebeccapurple;">
+	<img src="Screenshot (95).png" class="image" style="height: 200px; width: 200px;" alt="image"><br>
+	</div><br>
+	<button id="d1">hide</button>&nbsp;&nbsp;&nbsp;
+	<button id="d2">show</button><br><hr>
+	
+	<button id="d3">hide</button><hr>
+	<button id="plus">+</button>&nbsp;&nbsp;
+	<button id="minus">-</button>
+</body>
+</html>

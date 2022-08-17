@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+		<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<style>
+	#mydiv,#mydiv1,#mydiv2,#mydiv3,#mydiv4
+		{
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			border: solid 3px black;
+			padding: 10px;
+			font-style: bold;
+		}
+	
+	</style>
+	<script>
+			$(document).ready(function()
+			{
+				$("#mydiv").draggable();
+				
+				$("#mydiv1 span").draggable({
+					containment:"#mydiv1"
+				});
+				
+				$("#mydiv2 span").draggable({
+					axis:"x"
+				});
+				$("#mydiv3 span").draggable({
+					axis:"y"
+				});
+				
+				$("#mydiv4").resizable();
+			});
+	</script>
+</head>
+
+<body>
+	
+	<div id="mydiv"><span>hello students</span></div><hr>
+	<div id="mydiv1"><span>it will drag text inside div</span></div><hr>
+	<div id="mydiv2"><span>it will drag text horizontialy </span></div><hr>
+	<div id="mydiv3"><span>it will drag text verticaly </span></div><hr>
+	<div id="mydiv4"><span>resizeable </span></div>
+</body>
+</html>
